@@ -3,4 +3,22 @@ server {
     location /radarr {
         proxy_pass http://cygnus:7878;
     }
+    location /sonarr {
+        proxy_pass http://cygnus:8989;
+    }
+    location /snap {
+        proxy_pass http://cygnus:1780;
+    }
+    location /plex {
+        proxy_pass http://cygnus:32400;
+    }
+    location /pod {
+        proxy_pass http://cygnus:8181;
+    }
+    location /trans {
+        proxy_pass http://cygnus:49092;
+    }
+    location /nzb {
+        proxy_pass http://cygnus:9292;
+    }
 }
