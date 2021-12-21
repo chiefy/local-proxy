@@ -6,7 +6,7 @@ server {
     rewrite ^/pod$ http://cygnus:8181 redirect;
 
     location /j {
-        proxy_pass http://localhost:9117
+        proxy_pass http://localhost:9117;
     }
     location /radarr {
         proxy_pass http://cygnus:7878;
