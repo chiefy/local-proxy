@@ -7,7 +7,7 @@ services:
     volumes:
       - ./templates:/etc/nginx/templates
     ports:
-      - "80:80"
+      - "0.0.0.0:80:80"
     environment:
-      - NGINX_HOST=chief.home
+      - NGINX_HOST=chief.local
       - NGINX_PORT=80
