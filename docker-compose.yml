@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  proxy:
+    image: nginx
+    volumes:
+      - ./templates:/etc/nginx/templates
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_HOST=chief.home
+      - NGINX_PORT=80
