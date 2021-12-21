@@ -1,5 +1,13 @@
 server {
     listen ${NGINX_PORT};
+    server_name ${NGINX_HOST};
+
+    rewrite ^/plex$ http://cygnus:32400 redirect;
+    rewrite ^/pod$ http://cygnus:8181 redirect;
+
+    location /j {
+        proxy_pass http://localhost:9117
+    }
     location /radarr {
         proxy_pass http://cygnus:7878;
     }
@@ -8,12 +16,6 @@ server {
     }
     location /snap {
         proxy_pass http://cygnus:1780;
-    }
-    location /plex {
-        proxy_pass http://cygnus:32400;
-    }
-    location /pod {
-        proxy_pass http://cygnus:8181;
     }
     location /trans {
         proxy_pass http://cygnus:49092;
