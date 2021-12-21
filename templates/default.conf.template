@@ -2,11 +2,11 @@ server {
     listen ${NGINX_PORT};
     server_name ${NGINX_HOST};
 
-    rewrite ^/plex$ http://cygnus:32400 redirect;
-    rewrite ^/pod$ http://cygnus:8181 redirect;
+    rewrite ^/plex/?$ http://cygnus:32400 redirect;
+    rewrite ^/pod/?$ http://cygnus:8181 redirect;
 
     location /j {
-        proxy_pass http://localhost:9117;
+        proxy_pass http://enterprise:9117;
     }
     location /radarr {
         proxy_pass http://cygnus:7878;
