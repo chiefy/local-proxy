@@ -30,8 +30,8 @@ server {
         proxy_set_header   Upgrade $http_upgrade;
         proxy_set_header   Connection "upgrade";
     }    
-    location /iris {
-        proxy_pass http://cygnus:6680/iris/;
+    location /iris/ {
+        proxy_pass         http://cygnus:6680/iris/;
         proxy_redirect     off;
         proxy_set_header   Host             $host;
         proxy_set_header   X-Real-IP        $remote_addr;
