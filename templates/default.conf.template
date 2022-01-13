@@ -4,9 +4,8 @@ server {
 
     rewrite ^/plex/?$ http://cygnus:32400 redirect;
     rewrite ^/pod/?$ http://cygnus:8181 redirect;
-    rewrite ^/snap/?$ http://cygnus:1790 redirect;
+    rewrite ^/snap/?$ http://cygnus:1780 redirect;
     rewrite ^/iris/?$ http://cygnus:6680/iris/ redirect;
-    rewrite ^/r/?$ http://cygnus:5150 redirect; 
     
     location /j {
         proxy_pass http://enterprise:9117;
