@@ -6,6 +6,7 @@ server {
     rewrite ^/pod/?$ http://cygnus:8181 redirect;
     rewrite ^/snap/?$ http://cygnus:1780 redirect;
     rewrite ^/iris/?$ http://cygnus:6680/iris/ redirect;
+    rewrite ^/port/?$ http://cygnus:9000 redirect;
     
     location /j {
         proxy_pass http://enterprise:9117;
