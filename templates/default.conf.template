@@ -6,7 +6,7 @@ server {
     rewrite ^/pod/?$ http://cygnus:8181 redirect;
     rewrite ^/snap/?$ http://cygnus:1780 redirect;
     rewrite ^/iris/?$ http://cygnus:6680/iris/ redirect;
-    rewrite ^/port/?$ http://cygnus:9000 redirect;
+    rewrite ^/port/?$ http://cygnus:9123 redirect;
     
     location /j {
         proxy_pass http://enterprise:9117;
@@ -17,10 +17,16 @@ server {
     location /sonarr {
         proxy_pass http://cygnus:8989;
     }
-    location /trans {
-        proxy_pass http://cygnus:49092;
+    location /lidarr {
+        proxy_pass http://cygnus:8686;
     }
-    location /nzb {
-        proxy_pass http://cygnus:9292;
+    location /prowlarr {
+        proxy_pass http://cygnus:9696;
+    }
+    location /trans {
+        proxy_pass http://cygnus:9091;
+    }
+    location /sabnzbd {
+        proxy_pass http://cygnus:9090;
     }
 }
